@@ -1,6 +1,6 @@
 {
   "name": "react-userinput-hooks",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Hooks for handling user inputs changes with masks",
   "author": "incepter",
   "license": "MIT",
