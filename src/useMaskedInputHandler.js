@@ -7,15 +7,20 @@ import { useCallback } from 'react';
  * @param mask function to apply to value
  * @param cbArgs callback additional parameters
  */
-export default function useMaskedInputHandler({ callback, mask, ...cbArgs }) {
+export function useMaskedInputHandler({ callback, oldValue, mask, ...rest }) {
+  const eventCallback = ({ name, value }) => {
+    callback({ name, value, ...rest });
+  };
   const eventHandler = ({ target: { name, value } }) => {
     let calculatedValue = value;
     if (mask) {
       calculatedValue = mask(value) || '';
     }
-    callback({ name, value: calculatedValue, cbArgs });
+    if (calculatedValue !== oldValue) {
+      eventCallback({ name, value: calculatedValue });
+    }
   };
   return {
-    onChange: useCallback(eventHandler, [callback, mask, cbArgs]),
+    onChange: useCallback(eventHandler, [callback, mask]),
   };
 }

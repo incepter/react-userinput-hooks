@@ -1,3 +1,1 @@
-import useMaskedInputHandler from './useMaskedInputHandler';
-
-export { useMaskedInputHandler };
+export * from './useMaskedInputHandler';
