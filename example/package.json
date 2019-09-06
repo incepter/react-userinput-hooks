@@ -1,7 +1,7 @@
 {
   "name": "react-userinput-hooks-example",
   "homepage": "https://incepter.github.io/react-userinput-hooks",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "private": true,
   "dependencies": {
